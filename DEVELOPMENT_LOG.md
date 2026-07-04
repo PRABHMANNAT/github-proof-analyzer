@@ -74,5 +74,12 @@
 
 - Files changed: `src/lib/demo-data.ts`, `src/app/demo/page.tsx`, `src/app/api/analyze/route.ts`, `src/components/demo-banner.tsx`, `src/components/recent-searches.tsx`, `src/components/analyze-workspace.tsx`, `DEVELOPMENT_LOG.md`
 - Implemented: Static demo profile/report, `/demo` route, automatic demo fallback on rate limit, demo banner, localStorage recent searches, clickable recent usernames, and clear recent searches control.
-- Commit hash: pending
+- Commit hash: `a80d05b`
 - Next step: Add about and methodology pages.
+
+## Milestone 12: Add proof-first methodology pages
+
+- Files changed: `src/app/about/page.tsx`, `src/app/methodology/page.tsx`, `src/components/methodology-section.tsx`, `DEVELOPMENT_LOG.md`
+- Implemented: About page, methodology page, public evidence checklist, transparent heuristic table, evidence-label thresholds, limitations, and proof-first hiring language.
+- Commit hash: pending
+- Next step: Add analyzer utility tests.
