@@ -8,7 +8,9 @@ import { ForkRatioChart } from "@/components/fork-ratio-chart";
 import { LanguageChart } from "@/components/language-chart";
 import { ActivityTimeline } from "@/components/activity-timeline";
 import { ProfileCard } from "@/components/profile-card";
+import { ProofSignalsPanel } from "@/components/proof-signals-panel";
 import { RepositoryTable } from "@/components/repository-table";
+import { StrongestRepos } from "@/components/strongest-repos";
 import { UsernameSearch } from "@/components/username-search";
 import type { AnalysisResult } from "@/lib/types";
 
@@ -114,6 +116,8 @@ export function AnalyzeWorkspace() {
             activityByDate={analysis.activityByDate}
             limitationNote={analysis.limitationNote}
           />
+          <ProofSignalsPanel signals={analysis.proofSignals} warnings={analysis.reviewWarnings} />
+          <StrongestRepos repos={analysis.strongestRepos} />
           <RepositoryTable evidence={analysis.repoEvidence} />
         </div>
       ) : null}

@@ -53,5 +53,12 @@
 
 - Files changed: `src/components/activity-timeline.tsx`, `src/components/analyze-workspace.tsx`, `DEVELOPMENT_LOG.md`
 - Implemented: Recent public activity chart, event timeline, empty state, and clear limitation note explaining that GitHub public events may not represent full contribution history.
-- Commit hash: pending
+- Commit hash: `a883eab`
 - Next step: Add transparent proof signals panel and review warnings.
+
+## Milestone 9: Add transparent proof signals panel
+
+- Files changed: `src/components/proof-signals-panel.tsx`, `src/components/strongest-repos.tsx`, `src/components/analyze-workspace.tsx`, `DEVELOPMENT_LOG.md`
+- Implemented: Strong public signal panel, review warning panel, neutral empty states, and top strongest repositories section with transparent selection reasons and GitHub/homepage links.
+- Commit hash: pending
+- Next step: Add recruiter-friendly evidence report and Markdown export.
