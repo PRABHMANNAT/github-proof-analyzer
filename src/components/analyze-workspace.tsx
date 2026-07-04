@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 import { Archive, BookOpenCheck, Code2, GitFork, GitPullRequest, Star, TableProperties, TimerReset } from "lucide-react";
 import { MetricCard } from "@/components/metric-card";
 import { ForkRatioChart } from "@/components/fork-ratio-chart";
@@ -34,7 +35,12 @@ export function AnalyzeWorkspace() {
     async function hydrateRecentSearches() {
       await Promise.resolve();
       const stored = window.localStorage.getItem("github-proof-analyzer:recent-searches");
-      if (stored) setRecentSearches(JSON.parse(stored) as string[]);
+      if (!stored) return;
+      try {
+        setRecentSearches(JSON.parse(stored) as string[]);
+      } catch {
+        window.localStorage.removeItem("github-proof-analyzer:recent-searches");
+      }
     }
 
     void hydrateRecentSearches();
@@ -168,7 +174,7 @@ function EmptyState() {
 
 function LoadingSkeleton() {
   return (
-    <div className="mt-8 space-y-6" aria-label="Loading analysis">
+    <div className="mt-8 space-y-6" aria-busy="true" aria-label="Loading analysis" role="status">
       <div className="h-44 animate-pulse rounded-2xl border border-white/10 bg-white/[0.04]" />
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {Array.from({ length: 9 }).map((_, index) => (
@@ -181,9 +187,15 @@ function LoadingSkeleton() {
 
 function ErrorState({ message }: { message: string }) {
   return (
-    <section className="mt-10 rounded-2xl border border-red-400/20 bg-red-400/[0.08] p-6">
+    <section className="mt-10 rounded-2xl border border-red-400/20 bg-red-400/[0.08] p-6" role="alert">
       <h2 className="text-xl font-semibold text-white">Analysis could not complete</h2>
       <p className="mt-2 text-sm text-red-100/80">{message}</p>
+      <Link
+        href="/demo"
+        className="mt-4 inline-flex rounded-lg border border-red-100/20 px-4 py-2 text-sm font-semibold text-white transition hover:border-red-100/40"
+      >
+        View demo report
+      </Link>
     </section>
   );
 }

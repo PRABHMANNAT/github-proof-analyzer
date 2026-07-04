@@ -5,7 +5,7 @@ export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen px-5 py-12 md:px-8">
+      <main id="main-content" className="min-h-screen px-5 py-12 md:px-8">
         <section className="mx-auto max-w-4xl">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">About</p>
           <h1 className="mt-4 text-4xl font-semibold text-white md:text-6xl">Proof-first hiring, without unfair talent scores.</h1>

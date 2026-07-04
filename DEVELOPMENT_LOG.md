@@ -88,5 +88,12 @@
 
 - Files changed: `src/lib/analyzer.test.ts`, `DEVELOPMENT_LOG.md`
 - Implemented: Vitest coverage for original/fork ratio, evidence label generation, strongest repository selection, recruiter report generation, Markdown export, and proof-first language guardrails.
-- Commit hash: pending
+- Commit hash: `6065eac`
 - Next step: Polish UI responsiveness, accessibility, and error states.
+
+## Milestone 14: Polish UI responsiveness and error states
+
+- Files changed: `src/app/layout.tsx`, `src/app/globals.css`, `src/components/navbar.tsx`, `src/components/analyze-workspace.tsx`, page main landmarks, `DEVELOPMENT_LOG.md`
+- Implemented: Skip link, reduced-motion handling, mobile-visible navigation, main landmarks, loading status semantics, alert semantics, demo recovery CTA on errors, and safer localStorage parsing.
+- Commit hash: pending
+- Next step: Finalize README, development log, and production build.

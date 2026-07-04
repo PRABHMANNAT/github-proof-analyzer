@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content">
         <section className="relative min-h-[calc(100svh-4rem)] overflow-hidden px-5 py-16 md:px-8 md:py-24">
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(7,8,13,0.98),rgba(7,8,13,0.74)_48%,rgba(7,8,13,0.93))]" />

@@ -15,7 +15,7 @@ export default function MethodologyPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen px-5 py-12 md:px-8">
+      <main id="main-content" className="min-h-screen px-5 py-12 md:px-8">
         <div className="mx-auto max-w-5xl space-y-8">
           <section>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">Methodology</p>

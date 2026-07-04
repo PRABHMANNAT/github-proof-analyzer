@@ -18,9 +18,9 @@ export function Navbar() {
           </span>
           <span className="text-sm font-semibold text-white">GitHub Proof Analyzer</span>
         </Link>
-        <div className="hidden items-center gap-6 md:flex">
+        <div className="flex max-w-[52vw] items-center gap-3 overflow-x-auto md:max-w-none md:gap-6">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="text-sm text-slate-300 transition hover:text-white">
+            <Link key={item.href} href={item.href} className="whitespace-nowrap text-xs text-slate-300 transition hover:text-white md:text-sm">
               {item.label}
             </Link>
           ))}
