@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { Archive, BookOpenCheck, Code2, GitFork, GitPullRequest, Star, TableProperties, TimerReset } from "lucide-react";
 import { MetricCard } from "@/components/metric-card";
 import { ProfileCard } from "@/components/profile-card";
+import { RepositoryTable } from "@/components/repository-table";
 import { UsernameSearch } from "@/components/username-search";
 import type { AnalysisResult } from "@/lib/types";
 
@@ -101,6 +102,7 @@ export function AnalyzeWorkspace() {
               ))}
             </div>
           </section>
+          <RepositoryTable evidence={analysis.repoEvidence} />
         </div>
       ) : null}
     </div>

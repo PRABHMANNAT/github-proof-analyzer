@@ -32,5 +32,12 @@
 
 - Files changed: `src/app/api/analyze/route.ts`, `src/app/analyze/page.tsx`, `src/components/analyze-workspace.tsx`, `src/components/profile-card.tsx`, `src/components/metric-card.tsx`, `DEVELOPMENT_LOG.md`
 - Implemented: Server-side analysis API route, `/analyze` page, client dashboard loader, profile overview card, repository quality metric cards, loading state, empty state, and error state.
-- Commit hash: pending
+- Commit hash: `a34ffb6`
 - Next step: Add repository evidence table.
+
+## Milestone 6: Add repository evidence table
+
+- Files changed: `src/components/repository-table.tsx`, `src/components/analyze-workspace.tsx`, `DEVELOPMENT_LOG.md`
+- Implemented: Responsive repository table with descriptions, language, stars, forks, update dates, original/fork status, README/demo indicators, size, open issues, evidence labels, and transparent reasons/review notes.
+- Commit hash: pending
+- Next step: Add language depth and original/fork visualizations.
