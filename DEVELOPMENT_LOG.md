@@ -81,5 +81,12 @@
 
 - Files changed: `src/app/about/page.tsx`, `src/app/methodology/page.tsx`, `src/components/methodology-section.tsx`, `DEVELOPMENT_LOG.md`
 - Implemented: About page, methodology page, public evidence checklist, transparent heuristic table, evidence-label thresholds, limitations, and proof-first hiring language.
-- Commit hash: pending
+- Commit hash: `ba2a6f8`
 - Next step: Add analyzer utility tests.
+
+## Milestone 13: Add analyzer logic tests
+
+- Files changed: `src/lib/analyzer.test.ts`, `DEVELOPMENT_LOG.md`
+- Implemented: Vitest coverage for original/fork ratio, evidence label generation, strongest repository selection, recruiter report generation, Markdown export, and proof-first language guardrails.
+- Commit hash: pending
+- Next step: Polish UI responsiveness, accessibility, and error states.
