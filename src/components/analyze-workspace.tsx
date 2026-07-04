@@ -9,6 +9,7 @@ import { LanguageChart } from "@/components/language-chart";
 import { ActivityTimeline } from "@/components/activity-timeline";
 import { ProfileCard } from "@/components/profile-card";
 import { ProofSignalsPanel } from "@/components/proof-signals-panel";
+import { RecruiterReport } from "@/components/recruiter-report";
 import { RepositoryTable } from "@/components/repository-table";
 import { StrongestRepos } from "@/components/strongest-repos";
 import { UsernameSearch } from "@/components/username-search";
@@ -118,6 +119,7 @@ export function AnalyzeWorkspace() {
           />
           <ProofSignalsPanel signals={analysis.proofSignals} warnings={analysis.reviewWarnings} />
           <StrongestRepos repos={analysis.strongestRepos} />
+          <RecruiterReport report={analysis.report} />
           <RepositoryTable evidence={analysis.repoEvidence} />
         </div>
       ) : null}

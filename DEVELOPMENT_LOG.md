@@ -60,5 +60,12 @@
 
 - Files changed: `src/components/proof-signals-panel.tsx`, `src/components/strongest-repos.tsx`, `src/components/analyze-workspace.tsx`, `DEVELOPMENT_LOG.md`
 - Implemented: Strong public signal panel, review warning panel, neutral empty states, and top strongest repositories section with transparent selection reasons and GitHub/homepage links.
-- Commit hash: pending
+- Commit hash: `1abbc3e`
 - Next step: Add recruiter-friendly evidence report and Markdown export.
+
+## Milestone 10: Generate recruiter-friendly evidence report
+
+- Files changed: `src/components/recruiter-report.tsx`, `src/components/markdown-export-button.tsx`, `src/app/report/[username]/page.tsx`, `src/components/analyze-workspace.tsx`, `DEVELOPMENT_LOG.md`
+- Implemented: Recruiter report section with summary, strengths, evidence gaps, best repositories, interview questions, manual review steps, copy-to-clipboard Markdown export, downloadable Markdown file, and share-style report route.
+- Commit hash: pending
+- Next step: Add demo mode and recent profile searches.
