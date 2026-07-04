@@ -4,6 +4,8 @@ import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Archive, BookOpenCheck, Code2, GitFork, GitPullRequest, Star, TableProperties, TimerReset } from "lucide-react";
 import { MetricCard } from "@/components/metric-card";
+import { ForkRatioChart } from "@/components/fork-ratio-chart";
+import { LanguageChart } from "@/components/language-chart";
 import { ProfileCard } from "@/components/profile-card";
 import { RepositoryTable } from "@/components/repository-table";
 import { UsernameSearch } from "@/components/username-search";
@@ -102,6 +104,10 @@ export function AnalyzeWorkspace() {
               ))}
             </div>
           </section>
+          <div className="grid gap-6 xl:grid-cols-2">
+            <ForkRatioChart ratio={analysis.originalForkRatio} />
+            <LanguageChart summary={analysis.languageSummary} />
+          </div>
           <RepositoryTable evidence={analysis.repoEvidence} />
         </div>
       ) : null}

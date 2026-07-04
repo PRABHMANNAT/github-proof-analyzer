@@ -39,5 +39,12 @@
 
 - Files changed: `src/components/repository-table.tsx`, `src/components/analyze-workspace.tsx`, `DEVELOPMENT_LOG.md`
 - Implemented: Responsive repository table with descriptions, language, stars, forks, update dates, original/fork status, README/demo indicators, size, open issues, evidence labels, and transparent reasons/review notes.
-- Commit hash: pending
+- Commit hash: `5f3752e`
 - Next step: Add language depth and original/fork visualizations.
+
+## Milestone 7: Visualize language depth and fork ratio
+
+- Files changed: `src/components/fork-ratio-chart.tsx`, `src/components/language-chart.tsx`, `src/components/analyze-workspace.tsx`, `DEVELOPMENT_LOG.md`
+- Implemented: Donut chart for original vs forked repositories, language depth bar chart, language consistency insight, empty language state, and transparent interpretation copy.
+- Commit hash: pending
+- Next step: Add GitHub public activity timeline.
