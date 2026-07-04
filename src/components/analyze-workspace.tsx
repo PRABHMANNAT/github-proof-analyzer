@@ -7,8 +7,10 @@ import { MetricCard } from "@/components/metric-card";
 import { ForkRatioChart } from "@/components/fork-ratio-chart";
 import { LanguageChart } from "@/components/language-chart";
 import { ActivityTimeline } from "@/components/activity-timeline";
+import { DemoBanner } from "@/components/demo-banner";
 import { ProfileCard } from "@/components/profile-card";
 import { ProofSignalsPanel } from "@/components/proof-signals-panel";
+import { RecentSearches } from "@/components/recent-searches";
 import { RecruiterReport } from "@/components/recruiter-report";
 import { RepositoryTable } from "@/components/repository-table";
 import { StrongestRepos } from "@/components/strongest-repos";
@@ -26,6 +28,17 @@ export function AnalyzeWorkspace() {
   const [analysis, setAnalysis] = useState<AnalysisResult | null>(null);
   const [error, setError] = useState<ApiError | null>(null);
   const [loading, setLoading] = useState(false);
+  const [recentSearches, setRecentSearches] = useState<string[]>([]);
+
+  useEffect(() => {
+    async function hydrateRecentSearches() {
+      await Promise.resolve();
+      const stored = window.localStorage.getItem("github-proof-analyzer:recent-searches");
+      if (stored) setRecentSearches(JSON.parse(stored) as string[]);
+    }
+
+    void hydrateRecentSearches();
+  }, []);
 
   useEffect(() => {
     if (!username) return;
@@ -41,7 +54,15 @@ export function AnalyzeWorkspace() {
         const response = await fetch(`/api/analyze?username=${encodeURIComponent(username)}`);
         const payload = await response.json();
         if (!response.ok) throw payload;
-        if (!cancelled) setAnalysis(payload as AnalysisResult);
+        if (!cancelled) {
+          setAnalysis(payload as AnalysisResult);
+          const normalized = payload.user.login;
+          setRecentSearches((current) => {
+            const nextSearches = [normalized, ...current.filter((item) => item.toLowerCase() !== normalized.toLowerCase())].slice(0, 6);
+            window.localStorage.setItem("github-proof-analyzer:recent-searches", JSON.stringify(nextSearches));
+            return nextSearches;
+          });
+        }
       } catch (nextError) {
         if (!cancelled) {
           setAnalysis(null);
@@ -58,6 +79,11 @@ export function AnalyzeWorkspace() {
       cancelled = true;
     };
   }, [username]);
+
+  function clearRecentSearches() {
+    setRecentSearches([]);
+    window.localStorage.removeItem("github-proof-analyzer:recent-searches");
+  }
 
   const metricCards = useMemo(() => {
     if (!analysis) return [];
@@ -87,6 +113,7 @@ export function AnalyzeWorkspace() {
         </div>
         <UsernameSearch compact defaultValue={username} />
       </section>
+      <RecentSearches searches={recentSearches} onClear={clearRecentSearches} />
 
       {!username ? <EmptyState /> : null}
       {loading ? <LoadingSkeleton /> : null}
@@ -94,6 +121,7 @@ export function AnalyzeWorkspace() {
 
       {analysis && !loading ? (
         <div className="mt-8 space-y-8">
+          {analysis.usedDemoData ? <DemoBanner /> : null}
           <ProfileCard user={analysis.user} />
           <section>
             <div className="mb-4 flex items-end justify-between gap-4">

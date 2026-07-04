@@ -67,5 +67,12 @@
 
 - Files changed: `src/components/recruiter-report.tsx`, `src/components/markdown-export-button.tsx`, `src/app/report/[username]/page.tsx`, `src/components/analyze-workspace.tsx`, `DEVELOPMENT_LOG.md`
 - Implemented: Recruiter report section with summary, strengths, evidence gaps, best repositories, interview questions, manual review steps, copy-to-clipboard Markdown export, downloadable Markdown file, and share-style report route.
-- Commit hash: pending
+- Commit hash: `f50039f`
 - Next step: Add demo mode and recent profile searches.
+
+## Milestone 11: Add demo mode and recent profile searches
+
+- Files changed: `src/lib/demo-data.ts`, `src/app/demo/page.tsx`, `src/app/api/analyze/route.ts`, `src/components/demo-banner.tsx`, `src/components/recent-searches.tsx`, `src/components/analyze-workspace.tsx`, `DEVELOPMENT_LOG.md`
+- Implemented: Static demo profile/report, `/demo` route, automatic demo fallback on rate limit, demo banner, localStorage recent searches, clickable recent usernames, and clear recent searches control.
+- Commit hash: pending
+- Next step: Add about and methodology pages.
