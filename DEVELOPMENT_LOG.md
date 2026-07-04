@@ -95,5 +95,12 @@
 
 - Files changed: `src/app/layout.tsx`, `src/app/globals.css`, `src/components/navbar.tsx`, `src/components/analyze-workspace.tsx`, page main landmarks, `DEVELOPMENT_LOG.md`
 - Implemented: Skip link, reduced-motion handling, mobile-visible navigation, main landmarks, loading status semantics, alert semantics, demo recovery CTA on errors, and safer localStorage parsing.
-- Commit hash: pending
+- Commit hash: `0115ee5`
 - Next step: Finalize README, development log, and production build.
+
+## Milestone 15: Finalize documentation and development log
+
+- Files changed: `README.md`, `DEVELOPMENT_LOG.md`
+- Implemented: Complete production README with pitch, features, tech stack, methodology, installation, environment variables, local commands, project structure, deployment guidance, limitations, ethical note, roadmap, and author section.
+- Commit hash: pending
+- Next step: Run final lint, typecheck, tests, build, commit, push, and start the local dev server.
