@@ -6,6 +6,7 @@ import { Archive, BookOpenCheck, Code2, GitFork, GitPullRequest, Star, TableProp
 import { MetricCard } from "@/components/metric-card";
 import { ForkRatioChart } from "@/components/fork-ratio-chart";
 import { LanguageChart } from "@/components/language-chart";
+import { ActivityTimeline } from "@/components/activity-timeline";
 import { ProfileCard } from "@/components/profile-card";
 import { RepositoryTable } from "@/components/repository-table";
 import { UsernameSearch } from "@/components/username-search";
@@ -108,6 +109,11 @@ export function AnalyzeWorkspace() {
             <ForkRatioChart ratio={analysis.originalForkRatio} />
             <LanguageChart summary={analysis.languageSummary} />
           </div>
+          <ActivityTimeline
+            activity={analysis.activity}
+            activityByDate={analysis.activityByDate}
+            limitationNote={analysis.limitationNote}
+          />
           <RepositoryTable evidence={analysis.repoEvidence} />
         </div>
       ) : null}

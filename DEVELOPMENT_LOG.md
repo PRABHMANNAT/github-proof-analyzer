@@ -46,5 +46,12 @@
 
 - Files changed: `src/components/fork-ratio-chart.tsx`, `src/components/language-chart.tsx`, `src/components/analyze-workspace.tsx`, `DEVELOPMENT_LOG.md`
 - Implemented: Donut chart for original vs forked repositories, language depth bar chart, language consistency insight, empty language state, and transparent interpretation copy.
-- Commit hash: pending
+- Commit hash: `7711d32`
 - Next step: Add GitHub public activity timeline.
+
+## Milestone 8: Add GitHub public activity timeline
+
+- Files changed: `src/components/activity-timeline.tsx`, `src/components/analyze-workspace.tsx`, `DEVELOPMENT_LOG.md`
+- Implemented: Recent public activity chart, event timeline, empty state, and clear limitation note explaining that GitHub public events may not represent full contribution history.
+- Commit hash: pending
+- Next step: Add transparent proof signals panel and review warnings.
