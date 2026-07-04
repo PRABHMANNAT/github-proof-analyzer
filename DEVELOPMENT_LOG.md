@@ -25,5 +25,12 @@
 
 - Files changed: `src/lib/analyzer.ts`, `src/lib/report.ts`, `DEVELOPMENT_LOG.md`
 - Implemented: Transparent evidence heuristic, original/fork ratio, README coverage, language depth, strongest repo selection, activity normalization, proof signals, review warnings, recruiter report generation, Markdown export, and GitHub date formatting.
-- Commit hash: pending
+- Commit hash: `6aa5704`
 - Next step: Build the analysis dashboard profile overview and metric cards.
+
+## Milestone 5: Add profile overview dashboard
+
+- Files changed: `src/app/api/analyze/route.ts`, `src/app/analyze/page.tsx`, `src/components/analyze-workspace.tsx`, `src/components/profile-card.tsx`, `src/components/metric-card.tsx`, `DEVELOPMENT_LOG.md`
+- Implemented: Server-side analysis API route, `/analyze` page, client dashboard loader, profile overview card, repository quality metric cards, loading state, empty state, and error state.
+- Commit hash: pending
+- Next step: Add repository evidence table.
